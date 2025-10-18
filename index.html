@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>つみきのおもちゃ｜サンプル商品ページ</title>
+  <style>
+    body {
+      font-family: "Noto Sans JP", sans-serif;
+      margin: 0;
+      background-color: #f7f4f0;
+      color: #333;
+    }
+    header {
+      background-color: #fff;
+      border-bottom: 1px solid #ddd;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    header .logo {
+      font-weight: bold;
+      font-size: 1.2rem;
+      color: #7a614a;
+    }
+    nav a {
+      color: #7a614a;
+      margin-left: 15px;
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+    .breadcrumb {
+      font-size: 0.8rem;
+      padding: 10px 20px;
+      color: #777;
+    }
+    .breadcrumb a {
+      color: #777;
+      text-decoration: none;
+    }
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      background-color: #fff;
+      margin: 20px;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    .gallery {
+      flex: 1 1 45%;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .gallery img.main {
+      width: 100%;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+    .thumbnails {
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+      gap: 8px;
+    }
+    .thumbnails img {
+      width: 60px;
+      height: 60px;
+      border-radius: 5px;
+      cursor: pointer;
+      border: 2px solid transparent;
+      object-fit: cover;
+    }
+    .thumbnails img.active {
+      border-color: #7a614a;
+    }
+    .product-info {
+      flex: 1 1 50%;
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .product-info h1 {
+      font-size: 1.5rem;
+      color: #5a4632;
+      margin-bottom: 10px;
+    }
+    .price {
+      color: #b86b41;
+      font-size: 1.3rem;
+      margin-bottom: 15px;
+    }
+    .desc {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+    .btn {
+      background-color: #7a614a;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      font-size: 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      width: fit-content;
+      transition: background 0.3s;
+    }
+    .btn:hover {
+      background-color: #5a4632;
+    }
+    .details {
+      background: #fff;
+      margin: 20px;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    .details h2 {
+      font-size: 1.2rem;
+      color: #5a4632;
+      border-left: 4px solid #b86b41;
+      padding-left: 10px;
+      margin-bottom: 15px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+    table th, table td {
+      border-bottom: 1px solid #eee;
+      padding: 8px;
+      text-align: left;
+      font-size: 0.9rem;
+    }
+    .related {
+      margin: 20px;
+    }
+    .related h2 {
+      color: #5a4632;
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+    }
+    .related-items {
+      display: flex;
+      gap: 10px;
+      overflow-x: auto;
+    }
+    .related-item {
+      flex: 0 0 160px;
+      background: #fff;
+      border-radius: 8px;
+      text-align: center;
+      padding: 10px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .related-item img {
+      width: 100%;
+      border-radius: 5px;
+    }
+    footer {
+      background-color: #fff;
+      text-align: center;
+      padding: 15px;
+      font-size: 0.8rem;
+      color: #777;
+      border-top: 1px solid #ddd;
+    }
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+      .gallery, .product-info {
+        flex: 1 1 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">EduToy</div>
+    <nav>
+      <a href="#">商品一覧</a>
+      <a href="#">ブランド紹介</a>
+      <a href="#">お問い合わせ</a>
+    </nav>
+  </header>
+
+  <div class="breadcrumb">
+    <a href="#">ホーム</a> ＞ <a href="#">おもちゃ</a> ＞ つみき
+  </div>
+
+  <section class="container">
+    <div class="gallery">
+      <img src="https://placehold.co/500x500?text=Main+Image" alt="商品画像" class="main" id="mainImage">
+      <div class="thumbnails">
+        <img src="https://placehold.co/100x100?text=1" class="active" onclick="changeImage(this)">
+        <img src="https://placehold.co/100x100?text=2" onclick="changeImage(this)">
+        <img src="https://placehold.co/100x100?text=3" onclick="changeImage(this)">
+      </div>
+    </div>
+
+    <div class="product-info">
+      <h1>つみきのおもちゃ（サンプル）</h1>
+      <div class="price">¥5,280（税込）</div>
+      <div class="desc">
+        木のぬくもりを感じられる、やさしい色合いのつみきセット。<br>
+        お子さまの想像力や手先の発達を育みます。
+      </div>
+      <button class="btn">カートに入れる</button>
+    </div>
+  </section>
+
+  <section class="details">
+    <h2>商品詳細</h2>
+    <table>
+      <tr><th>対象年齢</th><td>1歳〜</td></tr>
+      <tr><th>素材</th><td>天然木（ブナ）</td></tr>
+      <tr><th>サイズ</th><td>約25×25×8cm</td></tr>
+      <tr><th>セット内容</th><td>ブロック × 30ピース</td></tr>
+      <tr><th>製造国</th><td>ベトナム</td></tr>
+    </table>
+  </section>
+
+  <section class="related">
+    <h2>関連商品</h2>
+    <div class="related-items">
+      <div class="related-item">
+        <img src="https://placehold.co/160x160?text=A" alt="">
+        <p>ナチュラルつみき</p>
+      </div>
+      <div class="related-item">
+        <img src="https://placehold.co/160x160?text=B" alt="">
+        <p>ミニカーセット</p>
+      </div>
+      <div class="related-item">
+        <img src="https://placehold.co/160x160?text=C" alt="">
+        <p>知育ブロック</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 EduToy Sample. All rights reserved.
+  </footer>
+
+  <script>
+    function changeImage(el) {
+      document.getElementById("mainImage").src = el.src.replace("100x100", "500x500");
+      document.querySelectorAll(".thumbnails img").forEach(img => img.classList.remove("active"));
+      el.classList.add("active");
+    }
+  </script>
+</body>
+</html>
